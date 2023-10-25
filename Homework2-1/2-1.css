@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #C8E6C9;
+    color: #00796B;
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+.drum-buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.drum {
+    background-image: url('drumkit.jpg'); 
+    width: 100px;
+    height: 100px;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(58, 154, 70);
+    cursor: pointer;
+    outline: none;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Age</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label, input, button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="ageForm" onsubmit="calculateAge(event)">
+        <label for="birthYear">Enter Birth Year:</label>
+        <input type="number" id="birthYear" required>
+        <button type="submit">Calculate Age</button>
+        <p id="result"></p>
+    </form>
+
+    <script>
+        function calculateAge(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            const currentYear = new Date().getFullYear();
+            const birthYear = parseInt(document.getElementById('birthYear').value);
+            
+            if (!isNaN(birthYear) && birthYear > 0 && birthYear <= currentYear) {
+                const age = currentYear - birthYear;
+                document.getElementById('result').textContent = `The age is: ${age} years.`;
+            } else {
+                document.getElementById('result').textContent = "Please enter a valid birth year.";
+            }
+        }
+    </script>
+</body>
+</html>

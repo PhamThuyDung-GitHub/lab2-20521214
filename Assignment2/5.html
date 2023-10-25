@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Dimensions on Resize</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Window Dimensions</h1>
+<p id="dimensions">Width: ???, Height: ???</p>
+
+<script>
+    function displayDimensions() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const dimensionsElem = document.getElementById('dimensions');
+        dimensionsElem.textContent = `Width: ${width}px, Height: ${height}px`;
+    }
+
+    // Display dimensions initially
+    displayDimensions();
+
+    // Update display on window resize
+    window.addEventListener('resize', displayDimensions);
+</script>
+
+</body>
+</html>

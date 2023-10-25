@@ -1,0 +1,155 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container styling for the navigator */
+nav {
+    display: flex;
+    justify-content: space-between; 
+    padding: 10px 0;
+    border-color:#02ff46;
+    border-style: none none solid none;
+}
+
+/* Styling for each navigation link */
+nav a {
+    text-decoration: none; 
+    color: black; 
+    font-weight: bold; 
+    flex: 1; 
+    text-align: center; 
+}
+
+
+.cv-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFF3E0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Ensure each child takes up an equal amount of space */
+.about-me, .profile-pic, .details {
+    flex: 1; /* Each child will occupy an equal portion of the container */
+    margin: 0 10px; /* Add some margin for spacing between elements */
+}
+
+.profile-pic {
+    max-width: 30%; /* Ensure the image doesn't overflow its container */
+    display: block; /* Make the image a block element to center it */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+
+.Education-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Distribute the children evenly */
+}
+
+/* Ensure each child takes up an equal amount of space */
+.educations, .works {
+    flex: 1; /* Each child will occupy an equal portion of the container */
+    margin: 0 10px; /* Add some margin for spacing between elements */
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;  /* Stretch the items to match the container's width */
+}
+
+.skills-heading {
+    text-align: left;
+}
+
+
+.columns-wrapper1 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;  /* If the viewport is too narrow, the columns will stack */
+}
+
+.column1, .column2 {
+    flex: 1; /* Each column will take up an equal amount of space */
+    margin: 10px; /* Some spacing around each column */
+}
+
+.columns-wrapper2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;       /* Align items to the start (top) of the container */
+}
+
+.column3, .column4 {
+    flex: 1; /* Each column will take up an equal amount of space */
+    margin: 10px; /* Some spacing around each column */               /* Let each column take half the space */
+}
+
+.languages-heading {
+    text-align: left;          /* Align the "Languages" heading to the left */
+}
+
+.item8, .item9, .item10, .item11 {
+    margin-bottom: 20px;       /* Add some space between each item for better readability */
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+
+
+.name {
+    font-weight: bold;
+}
+
+/* Proficiency rectangles */
+.proficiency {
+    display: flex;
+    direction: rtl;  /* Reverse the order to make the rectangles fill from the left */
+    unicode-bidi: bidi-override;  /* Override the text direction for inline elements */
+}
+
+.proficiency input[type="radio"] {
+    display: none;  /* Hide the radio buttons */
+}
+
+.proficiency .rectangle {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 1px;
+    background-color: #e0e0e0;  /* Default rectangle color */
+    cursor: pointer;  /* Hand cursor to indicate clickable area */
+}
+
+/* Highlight color when hovered or selected */
+.proficiency .rectangle:hover,
+.proficiency .rectangle:hover ~ .rectangle,
+.proficiency input[type="radio"]:checked ~ .rectangle {
+    background-color: #9CCC65;
+}

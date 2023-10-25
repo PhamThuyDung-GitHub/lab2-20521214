@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy to Clipboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="copyText" value="This is the text to be copied.">
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <script>
+        function copyToClipboard() {
+            const textArea = document.getElementById('copyText');
+            
+            // Select the content of the text area
+            textArea.select();
+            textArea.setSelectionRange(0, 99999); // For mobile devices
+            
+            // Use the copy command
+            document.execCommand('copy');
+            
+            alert("Text copied to clipboard!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve Button Value</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 50px auto;
+        }
+        input[type="text"], button {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="sampleForm">
+        <input type="text" placeholder="Enter some data" />
+        <button id="submitButton" type="button" value="Submit" onclick="retrieveValue()">Submit</button>
+    </form>
+
+    <script>
+        function retrieveValue() {
+            const button = document.getElementById('submitButton');
+            alert("Button value: " + button.value);
+        }
+    </script>
+</body>
+</html>

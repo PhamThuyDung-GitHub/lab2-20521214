@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Bold Words</title>
+    <style>
+        /* This style is applied when bold words are to be highlighted */
+        b.highlighted {
+            background-color: yellow;
+        }
+
+        /* Hover effect for the link */
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    This is a <b>sample</b> text with some <b>bold</b> words that will be highlighted when hovering over the link below.
+</p>
+<a id="highlightLink" href="#">Hover over me to highlight the bold words</a>
+
+<script>
+    const link = document.getElementById('highlightLink');
+
+    link.addEventListener('mouseover', function() {
+        const boldWords = document.querySelectorAll('b');
+        boldWords.forEach(word => {
+            word.classList.add('highlighted');
+        });
+    });
+
+    link.addEventListener('mouseout', function() {
+        const boldWords = document.querySelectorAll('b.highlighted');
+        boldWords.forEach(word => {
+            word.classList.remove('highlighted');
+        });
+    });
+</script>
+
+</body>
+</html>

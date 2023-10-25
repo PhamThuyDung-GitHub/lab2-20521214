@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write JSON to File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        button, textarea {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="jsonInput" rows="10" cols="50" placeholder="Enter JSON here."></textarea>
+    <button onclick="downloadJSON()">Download JSON</button>
+
+    <script>
+        function downloadJSON() {
+            const jsonText = document.getElementById('jsonInput').value;
+
+            try {
+                JSON.parse(jsonText); // Attempt to parse to ensure it's valid JSON
+
+                const blob = new Blob([jsonText], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'data.json';
+
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } catch (e) {
+                alert("Invalid JSON");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parse Cookie Header</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        button, textarea {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="cookieInput" rows="4" cols="50" placeholder="Enter the HTTP Cookie header string here."></textarea>
+    <button onclick="parseCookies()">Parse Cookies</button>
+    <pre id="output"></pre>
+
+    <script>
+        function parseCookies() {
+            const input = document.getElementById('cookieInput').value;
+            
+            const cookies = input.split('; ').reduce((acc, cookie) => {
+                const [name, value] = cookie.split('=');
+                acc[name] = value;
+                return acc;
+            }, {});
+            
+            const output = document.getElementById('output');
+            output.textContent = JSON.stringify(cookies, null, 4);
+        }
+    </script>
+</body>
+</html>
